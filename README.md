@@ -10,7 +10,7 @@ You can download and install Apk file in your Android phone from this (https://d
 
 
 # Instruction to download project from git and run locally
-To run the Flutter project locally by cloning the repository from this (https://github.com/nazmullhossain/softbd_assigment) link, follow these instructions:
+To run the Flutter project locally by cloning the repository from this (https://github.com/nazmullhossain/newsapp) link, follow these instructions:
 ### Note:
 make sure you have flutter SDK installed in your machine. If not then follow the instruction from this (https://flutter.dev/) link.
 
