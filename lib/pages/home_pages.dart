@@ -32,8 +32,10 @@ class _HomePagesState extends State<HomePages> {
       builder: (publicController) {
         if(publicController.size.value<=0.0) publicController.initApp(context);
         return Scaffold(
+          // backgroundColor: Colors.white70,
           appBar: AppBar(
-            title: Text("News Stories"),
+            backgroundColor: Color(0xff063970),
+            title: Text("News Stories",style: TextStyle(color: Colors.white),),
             centerTitle: true,
           ),
           body: SingleChildScrollView(
@@ -48,13 +50,18 @@ class _HomePagesState extends State<HomePages> {
                     },
 
                     child: Container(
-                      padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                      padding: EdgeInsets.all(40),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey
+                        color: Color(0xff1280b1)
                       ),
                       child: ListTile(
-                        title: Text('Story ID: ${publicController.topStories[index]}'),
+                        title: Text('ID: ${publicController.topStories[index]}',style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20
+                        ),),
                       ),
                     ),
                   );

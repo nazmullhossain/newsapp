@@ -7,15 +7,17 @@ import 'package:get/state_manager.dart';
 
 import 'api_serverice.dart';
 
-class Publiccontroller extends GetxController{
+class Publiccontroller extends GetxController {
   static Publiccontroller pc = Get.find();
   RxDouble size = 0.0.obs;
   List<dynamic> topStories = [].obs;
+  RxInt kids=0.obs;
+
   Rx<String> data = "Fetching data...".obs;
   Rx<bool> isLoading = true.obs;
 
   var itemData = <String, dynamic?>{}.obs;
-  ApiServerice apiServerice=ApiServerice();
+  ApiServerice apiServerice = ApiServerice();
   Future<void> initApp(BuildContext context) async {
     if (MediaQuery.of(context).size.width <= 500) {
       size.value = MediaQuery.of(context).size.width;
@@ -28,15 +30,10 @@ class Publiccontroller extends GetxController{
     }
   }
 
-
-  Future<void>getAllNews()async{
+  Future<void> getAllNews() async {
     await apiServerice.fetchTopStories();
     update();
   }
 
-  Future<void>getDetailsNews(int id)async{
-    await apiServerice.fetchDetailsData(id);
-    update();
-  }
 
 }

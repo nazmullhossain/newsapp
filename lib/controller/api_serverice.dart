@@ -19,19 +19,15 @@ class ApiServerice {
 
 
 
-  Future<void> fetchDetailsData(int id) async {
-    final url = 'https://hacker-news.firebaseio.com/v0/item/$id.json?print=pretty';
-    final response = await http.get(Uri.parse(url));
+  Future<Map<String, dynamic>> fetchItem(int id) async {
+    final response = await http.get(
+      Uri.parse('https://hacker-news.firebaseio.com/v0/item/$id.json?print=pretty'),
+    );
+
     if (response.statusCode == 200) {
-      print(response.body);
-        Publiccontroller.pc.itemData.value = json.decode(response.body);
-
+      return json.decode(response.body);
     } else {
-      // Handle the error appropriately here
-
-
-
-      throw Exception('Failed to load data');
+      throw Exception('Failed to load item');
     }
   }
 }
